@@ -9,10 +9,12 @@ const server = http.createServer(app);
 
 const wss = new WebSocketServer({ server });
 
-const users: { [key: string]: {
-    room: string;
-    ws: any;
-} } = {};
+const users: {
+    [key: string]: {
+        room: string;
+        ws: any;
+    }
+} = {};
 
 let counter = 0;
 
