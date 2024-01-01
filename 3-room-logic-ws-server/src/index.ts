@@ -21,6 +21,7 @@ let counter = 0;
 wss.on("connection", async (ws, req) => {
     const wsId = counter++;
     ws.on("message", (message: string) => {
+
         const data = JSON.parse(message.toString());
         if (data.type === "join") {
             users[wsId] = {
